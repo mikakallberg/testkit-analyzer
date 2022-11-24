@@ -8,7 +8,7 @@ class Profile(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=200, blank=True)
-    description = models.TextField(blank=True)
+    description = models.TextField(max_length=500, blank=True)
     image = models.ImageField(
         upload_to='images/', default='../default_profile_xx821h'
     )
