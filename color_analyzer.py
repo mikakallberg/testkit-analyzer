@@ -19,7 +19,7 @@ def rgb_to_hex(rgb_color):
 
 
 def prep_image(raw_img):
-    modified_img = cv2.resize(raw_img, (960, 640), interpolation = cv2.INTER_AREA)
+    modified_img = cv2.resize(raw_img, (900, 600), interpolation = cv2.INTER_AREA)
     modified_img = modified_img.reshape(modified_img.shape[0]*modified_img.shape[1], 3)
     return modified_img
 
