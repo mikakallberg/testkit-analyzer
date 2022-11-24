@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 
 
-image = cv2.imread('https://res.cloudinary.com/mikakallberg/image/upload/v1669297150/test_image_hq9wxb.jpg')
+image = cv2.imread('test_image.jpg')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 plt.imshow(image)
 
