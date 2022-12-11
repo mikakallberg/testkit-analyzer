@@ -7,6 +7,16 @@ import cv2
 
 
 image = cv2.imread('test_image.jpg')
+height, width, _ = np.shape(image)
+# print(height, width)
+data = np.reshape(image, (height * width, 3))
+data = np.float32(data)
+
+number_clusters = 3
+criteria = (cv2.TERM_CRITERIA_EPS + cv2.TermCriteria_MAX_ITER, 10, 1.0)
+flags = cv2.KMEANS_RANDOM_CENTERS
+compactness, labels, centers = cv2.kmeans(data, number_clusters, None, criteria, 10, flags)
+# print(centers)
 # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 cv2.imshow('Image', image)
 # plt.imshow(image)s
