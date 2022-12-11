@@ -13,13 +13,13 @@ def create_bar(height, width, color):
     print(red, green, blue)
     return bar, (red, green, blue)
 
-img = cv2.imread('test_image.jpg')
+img = cv2.imread('liquid_one.jpeg')
 height, width, _ = np.shape(img)
 # print(height, width)
 data = np.reshape(img, (height * width, 3))
 data = np.float32(data)
 
-number_clusters = 5
+number_clusters = 3
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TermCriteria_MAX_ITER, 10, 1.0)
 flags = cv2.KMEANS_RANDOM_CENTERS
 compactness, labels, centers = cv2.kmeans(data, number_clusters, None, criteria, 10, flags)
@@ -70,7 +70,6 @@ cv2.waitKey(0)
 #     hex_colors = [rgb_to_hex(ordered_colors[i]) for i in counts.keys()]
 #     plt.figure(figsize = (12, 8))
 #     plt.pie(counts.values(), color_labels = hex_colors, colors = hex_colors)
-#     plt.savefig("color_analysis_report.png")
 #     print(hex_colors)
 
 # modified_image = prep_image(image)
