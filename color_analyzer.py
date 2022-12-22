@@ -9,7 +9,7 @@ def create_bar(height, width, color):
     print(red, green, blue)
     return bar, (red, green, blue)
 
-img = cv2.imread('test_image.jpg')
+img = cv2.imread('assets/paper_three_frozen.jpeg')
 height, width, _ = np.shape(img)
 data = np.reshape(img, (height * width, 3))
 data = np.float32(data)
