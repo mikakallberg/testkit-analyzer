@@ -9,12 +9,12 @@ def create_bar(height, width, color):
     print(red, green, blue)
     return bar, (red, green, blue)
 
-img = cv2.imread('assets/paper_three_frozen.jpeg')
+img = cv2.imread('assets/liquid_four_37c.jpeg')
 height, width, _ = np.shape(img)
 data = np.reshape(img, (height * width, 3))
 data = np.float32(data)
 
-number_clusters = 3
+number_clusters = 5
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TermCriteria_MAX_ITER, 10, 1.0)
 flags = cv2.KMEANS_RANDOM_CENTERS
 compactness, labels, centers = cv2.kmeans(data, number_clusters, None, criteria, 10, flags)
